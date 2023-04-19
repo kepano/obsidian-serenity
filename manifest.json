@@ -1,0 +1,11 @@
+{
+	"id": "serenity",
+	"name": "Serenity",
+	"version": "0.1.0",
+	"minAppVersion": "0.15.0",
+	"description": "Fade the words around the current word, ideal for stream of consciousness writing.",
+	"author": "@kepano",
+	"authorUrl": "https://www.twitter.com/kepano",
+	"fundingUrl": "https://www.buymeacoffee.com/kepano",
+	"isDesktopOnly": false
+}

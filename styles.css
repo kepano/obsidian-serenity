@@ -1,0 +1,50 @@
+/* Only apply styling when the `focus-active-sentence` class is present */
+
+.cm-line {
+    opacity: 0.05;
+    transition: opacity 1s linear;
+}
+
+.cm-line:has(+ .cm-active) {
+    opacity: 1;
+}
+
+.cm-active.cm-line {
+    opacity: 1;
+}
+
+.word-span {
+    opacity: 0.05;
+    transition: opacity 1s linear;
+}
+
+.focus-word-active .word-span  {
+    opacity: 1;
+}
+
+/* previous words */
+.word-span:has(+ .word-span + .word-span + .word-span + .focus-word-active) {
+    opacity: 0.16;
+}
+
+.word-span:has(+ .word-span + .word-span + .focus-word-active) {
+    opacity: 0.32;
+}
+
+.word-span:has(+ .word-span + .focus-word-active) {
+    opacity: 0.64;
+}
+
+.word-span:has(+ .focus-word-active) {
+    opacity: 0.8;
+}
+
+/* next words */
+.focus-word-active + .word-span {
+    opacity: 0.64;
+}
+
+.focus-word-active + .word-span + .word-span {
+    opacity: 0.32;
+}
+
