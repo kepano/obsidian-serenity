@@ -1,50 +1,53 @@
 /* Only apply styling when the `focus-active-sentence` class is present */
-
-.cm-focused .cm-line {
-    opacity: 0.04;
+.serenity-fade-words {
+	--serenity-fade-words-faded: 0.05;
 }
 
-.cm-active.cm-line {
+.serenity-fade-words .cm-focused .cm-line {
+    opacity: var(--serenity-fade-words-faded);
+}
+
+.serenity-fade-words .cm-active.cm-line {
     opacity: 1;
 }
 
-.word-span {
-    opacity: 0.05;
+.serenity-fade-words .word-span {
+    opacity: var(--serenity-fade-words-faded);
     transition: opacity 0.5s ease-out;
 }
 
-.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:last-child,
-.focus-word-active .word-span  {
+.serenity-fade-words .cm-active.cm-line:not(:has(.focus-word-active)) .word-span:last-child,
+.serenity-fade-words .focus-word-active .word-span  {
     opacity: 1;
 }
 
 /* previous words */
-.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(5),
-.word-span:has(+ .word-span + .word-span + .word-span + .focus-word-active) {
+.serenity-fade-words .cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(5),
+.serenity-fade-words .word-span:has(+ .word-span + .word-span + .word-span + .focus-word-active) {
     opacity: 0.16;
 }
 
-.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(4),
-.word-span:has(+ .word-span + .word-span + .focus-word-active) {
+.serenity-fade-words .cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(4),
+.serenity-fade-words .word-span:has(+ .word-span + .word-span + .focus-word-active) {
     opacity: 0.32;
 }
 
-.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(3),
-.word-span:has(+ .word-span + .focus-word-active) {
+.serenity-fade-words .cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(3),
+.serenity-fade-words .word-span:has(+ .word-span + .focus-word-active) {
     opacity: 0.64;
 }
 
-.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(2),
-.word-span:has(+ .focus-word-active) {
+.serenity-fade-words .cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(2),
+.serenity-fade-words .word-span:has(+ .focus-word-active) {
     opacity: 0.8;
 }
 
 /* next words */
-.focus-word-active + .word-span {
+.serenity-fade-words .focus-word-active + .word-span {
     opacity: 0.64;
 }
 
-.focus-word-active + .word-span + .word-span {
+.serenity-fade-words .focus-word-active + .word-span + .word-span {
     opacity: 0.32;
 }
 

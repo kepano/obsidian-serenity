@@ -1,7 +1,7 @@
 {
 	"id": "serenity",
 	"name": "Serenity",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"minAppVersion": "0.15.0",
 	"description": "Fade the words around the current word, ideal for stream of consciousness writing.",
 	"author": "@kepano",
