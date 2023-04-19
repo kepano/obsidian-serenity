@@ -1,12 +1,7 @@
 /* Only apply styling when the `focus-active-sentence` class is present */
 
-.cm-line {
-    opacity: 0.05;
-    transition: opacity 1s linear;
-}
-
-.cm-line:has(+ .cm-active) {
-    opacity: 1;
+.cm-focused .cm-line {
+    opacity: 0.04;
 }
 
 .cm-active.cm-line {
@@ -15,26 +10,31 @@
 
 .word-span {
     opacity: 0.05;
-    transition: opacity 1s linear;
+    transition: opacity 0.5s ease-out;
 }
 
+.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:last-child,
 .focus-word-active .word-span  {
     opacity: 1;
 }
 
 /* previous words */
+.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(5),
 .word-span:has(+ .word-span + .word-span + .word-span + .focus-word-active) {
     opacity: 0.16;
 }
 
+.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(4),
 .word-span:has(+ .word-span + .word-span + .focus-word-active) {
     opacity: 0.32;
 }
 
+.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(3),
 .word-span:has(+ .word-span + .focus-word-active) {
     opacity: 0.64;
 }
 
+.cm-active.cm-line:not(:has(.focus-word-active)) .word-span:nth-last-child(2),
 .word-span:has(+ .focus-word-active) {
     opacity: 0.8;
 }
